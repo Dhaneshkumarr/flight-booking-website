@@ -12,16 +12,158 @@
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <link href="assets/css/theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
 </head>
 
 <body>
-    <?php include_once("include/header.php")  ?>
-    <?php include_once("include/search-loader.php")  ?>
+    <div class="airline-top-bar text-white">
+        <div class="container">
+            <div class="row align-items-center py-2 gy-2 flex-column flex-md-row justify-content-between">
+
+                <!-- Lado izquierdo - Información de confianza -->
+                <div class="col-auto">
+                    <div class="d-flex flex-wrap align-items-center gap-3 small">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-shield-alt text-success"></i>
+                            <span>Reserva segura y confiable</span>
+                        </div>
+                        <div class="d-none d-lg-flex align-items-center gap-2">
+                            <i class="fas fa-clock text-info"></i>
+                            <span>Reserva en cualquier momento y lugar</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-headset text-primary"></i>
+                            <span>Atención al cliente 24/7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lado derecho - Contacto y ubicación -->
+                <div class="col-auto">
+                    <div
+                        class="d-flex flex-wrap justify-content-center justify-content-md-end align-items-center gap-3 text-white">
+
+                        <!-- Teléfono -->
+                        <a href="tel:<?php echo $phone_number; ?>"
+                            class="text-white text-decoration-none d-flex align-items-center gap-1">
+                            <i class="fas fa-phone-alt fs-9 text-success"></i>
+                            <span class="d-none d-sm-inline">
+                                <?php echo $phone_number; ?>
+                            </span>
+                            <span class="d-inline d-sm-none">Llamar</span>
+                        </a>
+
+                        <!-- Correo electrónico -->
+                        <a href="mailto:<?php echo $email_address; ?>"
+                            class="text-white text-decoration-none d-flex align-items-center gap-1">
+                            <i class="fas fa-envelope fs-9 text-primary"></i>
+                            <span class="d-none d-md-inline">
+                                <?php echo $email_address; ?>
+                            </span>
+                            <span class="d-inline d-md-none">Correo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Airline Navigation -->
+    <header class="sticky-top bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-1">
+            <div class="container position-relative">
+                <a class="navbar-brand" href="index.php">
+                    <img src="assets/img/logo.png" alt="Logo de Aerolínea" class="img-fluid transition-all" width="200"
+                        style="transition: all 0.3s ease;">
+                </a>
+
+                <!-- Botón de menú móvil animado -->
+                <button class="navbar-toggler border-0 px-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
+
+                <!-- Contenido de navegación -->
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <!-- Menú principal con efectos hover -->
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-1 mx-lg-2 position-relative">
+                            <a class="nav-link px-1 py-2 rounded <?php echo ($currentPage == 'index.php') ? 'active text-primary fw-bold' : 'text-primary'; ?>"
+                                href="index.php">
+                                <i class="fas fa-home me-2"></i>
+                                <span>Hogar</span>
+                                <div class="nav-hover-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-1 mx-lg-2 position-relative">
+                            <a class="nav-link px-1 py-2 rounded <?php echo ($currentPage == 'about-us.php') ? 'active text-primary fw-bold' : 'text-primary'; ?>"
+                                href="about-us.php">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <span>Sobre Nosotros</span>
+                                <div class="nav-hover-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-1 mx-lg-2 position-relative">
+                            <a class="nav-link px-1 py-2 rounded <?php echo ($currentPage == 'privacy-policy.php') ? 'active text-primary fw-bold' : 'text-primary'; ?>"
+                                href="privacy-policy.php">
+                                <i class="fas fa-map-marked-alt me-2"></i>
+                                <span>Política de Privacidad</span>
+                                <div class="nav-hover-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-1 mx-lg-2 position-relative">
+                            <a class="nav-link px-1 py-2 rounded <?php echo ($currentPage == 'contact-us.php') ? 'active text-primary fw-bold' : 'text-primary'; ?>"
+                                href="contact-us.php">
+                                <i class="fas fa-envelope me-2"></i>
+                                <span>Contacto</span>
+                                <div class="nav-hover-indicator"></div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Botón premium de Llamar ahora -->
+                    <div class="d-flex ms-lg-3">
+                        <a href="tel:<?php echo $phone_number ?>"
+                            class="supportBtn btn rounded-pill px-3 py-2 fw-bold d-flex align-items-center shadow hover-effects">
+                            <div class="position-relative me-2">
+                                <div class="d-flex align-items-center justify-content-center"
+                                    style="width: 36px; height: 36px;">
+                                    <img src="assets/img/call2.gif" alt="" style="width: 68px; height: 46px;">
+                                </div>
+                                <span class="position-absolute bottom-0 end-0 bg-success rounded-circle pulse-animation"
+                                    style="width: 12px; height: 12px; border: 2px solid white;"></span>
+                            </div>
+                            <div class="d-flex flex-column text-start lh-1 me-2">
+                                <small class="small text-white mb-1" style="opacity: 0.9;">Llámanos 24/7</small>
+                                <span class="text-white fw-bold">
+                                    <?php echo $phone_number ?>
+                                </span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                viewBox="0 0 16 16" class="ms-1">
+                                <path fill-rule="evenodd"
+                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
     <div id="main-section">
         <!-- Banner Section -->
         <div class="home_banner text-white position-relative">
             <section class="d-flex align-items-center justify-content-center">
-                <div class="container-fluid py-4 bg-light" style="background: linear-gradient(135deg, rgba(58, 12, 163, 0.6), rgba(114, 9, 183, 0.85));">
+                <div class="container-fluid py-4 bg-light"
+                    style="background: linear-gradient(135deg, rgba(58, 12, 163, 0.6), rgba(114, 9, 183, 0.85));">
                     <div class="container">
                         <div class="row align-items-center justify-content-center text-center text-lg-start">
 
@@ -40,11 +182,8 @@
                                         <div class="card-body p-3">
                                             <div class="row align-items-center">
                                                 <div class="col-auto">
-                                                    <img
-                                                        src="assets/img/call.png"
-                                                        alt="Agente de viajes Sarah Martinez"
-                                                        class="rounded-circle border border-3 border-white"
-                                                        width="80"
+                                                    <img src="assets/img/call.png" alt="Agente de viajes Sarah Martinez"
+                                                        class="rounded-circle border border-3 border-white" width="80"
                                                         height="80" />
                                                 </div>
 
@@ -57,7 +196,8 @@
                                                     </p>
                                                     <div class="d-flex align-items-center">
                                                         <i class="fas fa-phone-alt me-2 text-success"></i>
-                                                        <a href="tel: <?php echo $phone_number ?>" class="text-decoration-none">
+                                                        <a href="tel: <?php echo $phone_number ?>"
+                                                            class="text-decoration-none">
                                                             <span class="text-white fw-bold h5 mb-0">
                                                                 <?php echo $phone_number ?>
                                                             </span>
@@ -74,7 +214,8 @@
                             <div class="col-lg-4 col-xl-5">
                                 <div class="text-center">
                                     <div class="rounded-2 p-3 shadow-md">
-                                        <img src="assets/img/home-p2.png" alt="Ofertas Exclusivas" class="img-fluid rounded-2" />
+                                        <img src="assets/img/home-p2.png" alt="Ofertas Exclusivas"
+                                            class="img-fluid rounded-2" />
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +238,8 @@
                 <div class="row mb-4">
                     <div class="col-12">
                         <h3 class="fw-bold text-primary mb-2">Ofertas Exclusivas para Ti</h3>
-                        <p class="text-muted mb-0">¡Aprovecha increíbles ofertas de vuelos – solo por tiempo limitado!</p>
+                        <p class="text-muted mb-0">¡Aprovecha increíbles ofertas de vuelos – solo por tiempo limitado!
+                        </p>
                     </div>
                 </div>
 
@@ -119,7 +261,8 @@
                                     <li><i class="fas fa-plane me-2"></i>Todos los destinos en EE.UU.</li>
                                     <li><i class="fas fa-calendar me-2"></i>Fechas flexibles</li>
                                 </ul>
-                                <a href="tel: <?php echo $phone_number ?>" class="btn btn-sm btn-primary w-100 fw-semibold">Reservar Ahora</a>
+                                <a href="tel: <?php echo $phone_number ?>"
+                                    class="btn btn-sm btn-primary w-100 fw-semibold">Reservar Ahora</a>
                             </div>
                         </div>
                     </div>
@@ -140,7 +283,8 @@
                                     <li><i class="fas fa-globe me-2"></i>Más de 200 destinos</li>
                                     <li><i class="fas fa-chair me-2"></i>Viaje cómodo</li>
                                 </ul>
-                                <a href="index.php" class="btn btn-sm btn-success w-100 fw-semibold">Explorar Ofertas</a>
+                                <a href="index.php" class="btn btn-sm btn-success w-100 fw-semibold">Explorar
+                                    Ofertas</a>
                             </div>
                         </div>
                     </div>
@@ -149,19 +293,22 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body p-3 position-relative">
-                                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">OFERTA RELÁMPAGO</span>
+                                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">OFERTA
+                                    RELÁMPAGO</span>
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="bg-warning bg-opacity-10 rounded-circle p-2 me-2">
                                         <i class="fas fa-clock text-warning"></i>
                                     </div>
                                     <h5 class="mb-0 text-dark">Vuelos de Última Hora</h5>
                                 </div>
-                                <p class="text-muted mb-3">Salidas rápidas con grandes descuentos. Asientos limitados.</p>
+                                <p class="text-muted mb-3">Salidas rápidas con grandes descuentos. Asientos limitados.
+                                </p>
                                 <ul class="list-unstyled small text-muted mb-3">
                                     <li><i class="fas fa-bolt me-2"></i>En los próximos 14 días</li>
                                     <li><i class="fas fa-check me-2"></i>Confirmación instantánea</li>
                                 </ul>
-                                <a href="index.php" class="btn btn-sm btn-warning w-100 fw-semibold text-white">Aprovechar Oferta</a>
+                                <a href="index.php"
+                                    class="btn btn-sm btn-warning w-100 fw-semibold text-white">Aprovechar Oferta</a>
                             </div>
                         </div>
                     </div>
@@ -170,11 +317,13 @@
         </section>
 
         <!-- Why Choose Us Section -->
-        <section class="py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <section class="py-5 position-relative overflow-hidden"
+            style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
             <!-- Decorative Elements -->
             <div class="position-absolute bottom-0 start-0" style="z-index: 0;">
                 <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="100" cy="100" r="99" stroke="var(--bs-primary)" stroke-width="2" stroke-dasharray="8 8" />
+                    <circle cx="100" cy="100" r="99" stroke="var(--bs-primary)" stroke-width="2"
+                        stroke-dasharray="8 8" />
                 </svg>
             </div>
 
@@ -183,10 +332,12 @@
                     <!-- Image Column -->
                     <div class="col-lg-6">
                         <div class="position-relative rounded-4 overflow-hidden shadow-lg">
-                            <img src="assets/img/why1.jpg" alt="Viajeros felices en el aeropuerto" class="img-fluid w-100 rounded-4" style="height: 400px; object-fit: cover;">
+                            <img src="assets/img/why1.jpg" alt="Viajeros felices en el aeropuerto"
+                                class="img-fluid w-100 rounded-4" style="height: 400px; object-fit: cover;">
                             <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-50">
                                 <div class="d-flex align-items-center">
-                                    <img src="assets/img/avtar.png" alt="Cliente feliz" class="rounded-circle border border-3 border-white" width="50" height="50">
+                                    <img src="assets/img/avtar.png" alt="Cliente feliz"
+                                        class="rounded-circle border border-3 border-white" width="50" height="50">
                                     <div class="ms-3 text-white">
                                         <p class="mb-1 fw-bold small">"¡Ahorré $420 en mi último viaje!"</p>
                                         <div class="d-flex align-items-center small">
@@ -224,7 +375,8 @@
                                         </div>
                                     </div>
                                     <a href="tel: <?php echo $phone_number ?>">
-                                        <button class="btn btn-light btn-sm w-100 rounded-pill fw-bold">Reservar Ahora</button>
+                                        <button class="btn btn-light btn-sm w-100 rounded-pill fw-bold">Reservar
+                                            Ahora</button>
                                     </a>
                                 </div>
                             </div>
@@ -234,12 +386,15 @@
                     <!-- Content Column -->
                     <div class="col-lg-6">
                         <div class="pe-lg-4">
-                            <span class="badge bg-success bg-opacity-10 text-success fs-8 fw-normal mb-3 px-3 py-2 rounded-pill">
+                            <span
+                                class="badge bg-success bg-opacity-10 text-success fs-8 fw-normal mb-3 px-3 py-2 rounded-pill">
                                 <i class="fas fa-shield-alt me-2"></i> Reserva Segura y Confiable
                             </span>
-                            <h5 class="fw-bold mb-3">¿Por Qué los Viajeros Eligen <span class="text-primary">Nuestra Plataforma</span>?</h5>
+                            <h5 class="fw-bold mb-3">¿Por Qué los Viajeros Eligen <span class="text-primary">Nuestra
+                                    Plataforma</span>?</h5>
                             <p class="text-muted mb-4">
-                                En Tour, no solo reservamos vuelos – creamos experiencias de viaje excepcionales. Esto es lo que nos hace diferentes:
+                                En Tour, no solo reservamos vuelos – creamos experiencias de viaje excepcionales. Esto
+                                es lo que nos hace diferentes:
                             </p>
 
                             <!-- Features Grid -->
@@ -251,7 +406,8 @@
                                         </div>
                                         <div>
                                             <h6 class="fw-bold mb-1">Ofertas Exclusivas</h6>
-                                            <p class="text-muted small mb-0">Ahorra hasta un 60% en vuelos con ventas flash y ofertas privadas.</p>
+                                            <p class="text-muted small mb-0">Ahorra hasta un 60% en vuelos con ventas
+                                                flash y ofertas privadas.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -263,7 +419,8 @@
                                         </div>
                                         <div>
                                             <h6 class="fw-bold mb-1">Asesoría Experta</h6>
-                                            <p class="text-muted small mb-0">Nuestros expertos te ayudan a crear itinerarios perfectos siempre.</p>
+                                            <p class="text-muted small mb-0">Nuestros expertos te ayudan a crear
+                                                itinerarios perfectos siempre.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -275,7 +432,8 @@
                                         </div>
                                         <div>
                                             <h6 class="fw-bold mb-1">Reserva Sin Esfuerzo</h6>
-                                            <p class="text-muted small mb-0">Reserva en menos de 90 segundos con nuestra plataforma inteligente.</p>
+                                            <p class="text-muted small mb-0">Reserva en menos de 90 segundos con nuestra
+                                                plataforma inteligente.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -287,7 +445,8 @@
                                         </div>
                                         <div>
                                             <h6 class="fw-bold mb-1">Soporte Global 24/7</h6>
-                                            <p class="text-muted small mb-0">Recibe ayuda en cualquier momento con chat y llamadas en varios idiomas.</p>
+                                            <p class="text-muted small mb-0">Recibe ayuda en cualquier momento con chat
+                                                y llamadas en varios idiomas.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -334,13 +493,15 @@
                                         <div class="card-body p-3">
                                             <div class="d-flex justify-content-between align-items-start mb-2">
                                                 <div>
-                                                    <span class="badge bg-primary bg-opacity-10 text-primary small">DIRECTO</span>
+                                                    <span
+                                                        class="badge bg-primary bg-opacity-10 text-primary small">DIRECTO</span>
                                                     <h6 class="mb-0 mt-1">NYC → Hawái</h6>
                                                 </div>
                                                 <span class="flight-price">$349</span>
                                             </div>
 
-                                            <div class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
+                                            <div
+                                                class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
                                                 <div class="text-center">
                                                     <div class="airport-code">JFK</div>
                                                     <small class="city-name">Nueva York</small>
@@ -356,7 +517,8 @@
                                             </div>
 
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted">Usa el código: <span class="text-primary">FLY25OFF</span></small>
+                                                <small class="text-muted">Usa el código: <span
+                                                        class="text-primary">FLY25OFF</span></small>
                                                 <a href="tel: <?php echo $phone_number ?>" class="text-decoration-none">
                                                     <button class="btn btn-sm btn-outline-primary compact-book-btn">
                                                         <i class="fas fa-phone-alt"></i> Llama Ahora
@@ -373,13 +535,15 @@
                                         <div class="card-body p-3">
                                             <div class="d-flex justify-content-between align-items-start mb-2">
                                                 <div>
-                                                    <span class="badge bg-success bg-opacity-10 text-success small">SIN ESCALAS</span>
+                                                    <span class="badge bg-success bg-opacity-10 text-success small">SIN
+                                                        ESCALAS</span>
                                                     <h6 class="mb-0 mt-1">LA → Miami</h6>
                                                 </div>
                                                 <span class="flight-price">$279</span>
                                             </div>
 
-                                            <div class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
+                                            <div
+                                                class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
                                                 <div class="text-center">
                                                     <div class="airport-code">LAX</div>
                                                     <small class="city-name">Los Ángeles</small>
@@ -395,7 +559,8 @@
                                             </div>
 
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted">Usa el código: <span class="text-success">FLY25OFF</span></small>
+                                                <small class="text-muted">Usa el código: <span
+                                                        class="text-success">FLY25OFF</span></small>
                                                 <a href="tel: <?php echo $phone_number ?>" class="text-decoration-none">
                                                     <button class="btn btn-sm btn-outline-success compact-book-btn">
                                                         <i class="fas fa-phone-alt"></i> Llama Ahora
@@ -412,13 +577,15 @@
                                         <div class="card-body p-3">
                                             <div class="d-flex justify-content-between align-items-start mb-2">
                                                 <div>
-                                                    <span class="badge bg-warning bg-opacity-10 text-warning small">FIN DE SEMANA</span>
+                                                    <span class="badge bg-warning bg-opacity-10 text-warning small">FIN
+                                                        DE SEMANA</span>
                                                     <h6 class="mb-0 mt-1">Chicago → Vegas</h6>
                                                 </div>
                                                 <span class="flight-price">$199</span>
                                             </div>
 
-                                            <div class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
+                                            <div
+                                                class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
                                                 <div class="text-center">
                                                     <div class="airport-code">ORD</div>
                                                     <small class="city-name">Chicago</small>
@@ -434,7 +601,8 @@
                                             </div>
 
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted">Usa el código: <span class="text-warning">FLY25OFF</span></small>
+                                                <small class="text-muted">Usa el código: <span
+                                                        class="text-warning">FLY25OFF</span></small>
                                                 <a href="tel: <?php echo $phone_number ?>" class="text-decoration-none">
                                                     <button class="btn btn-sm btn-outline-warning compact-book-btn">
                                                         <i class="fas fa-phone-alt"></i> Llama Ahora
@@ -456,13 +624,15 @@
                                         <div class="card-body p-3">
                                             <div class="d-flex justify-content-between align-items-start mb-2">
                                                 <div>
-                                                    <span class="badge bg-purple bg-opacity-10 text-white small">RÁPIDO</span>
+                                                    <span
+                                                        class="badge bg-purple bg-opacity-10 text-white small">RÁPIDO</span>
                                                     <h6 class="mb-0 mt-1">Dallas → Atlanta</h6>
                                                 </div>
                                                 <span class="flight-price">$159</span>
                                             </div>
 
-                                            <div class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
+                                            <div
+                                                class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
                                                 <div class="text-center">
                                                     <div class="airport-code">DFW</div>
                                                     <small class="city-name">Dallas</small>
@@ -478,7 +648,8 @@
                                             </div>
 
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted">Usa el código: <span class="text-purple">FLY25OFF</span></small>
+                                                <small class="text-muted">Usa el código: <span
+                                                        class="text-purple">FLY25OFF</span></small>
                                                 <a href="tel: <?php echo $phone_number ?>" class="text-decoration-none">
                                                     <button class="btn btn-sm btn-outline-primary compact-book-btn">
                                                         <i class="fas fa-phone-alt"></i> Llama Ahora
@@ -495,13 +666,15 @@
                                         <div class="card-body p-3">
                                             <div class="d-flex justify-content-between align-items-start mb-2">
                                                 <div>
-                                                    <span class="badge bg-pink bg-opacity-10 text-white small">COSTERO</span>
+                                                    <span
+                                                        class="badge bg-pink bg-opacity-10 text-white small">COSTERO</span>
                                                     <h6 class="mb-0 mt-1">SF → Seattle</h6>
                                                 </div>
                                                 <span class="flight-price">$129</span>
                                             </div>
 
-                                            <div class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
+                                            <div
+                                                class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
                                                 <div class="text-center">
                                                     <div class="airport-code">SFO</div>
                                                     <small class="city-name">San Francisco</small>
@@ -517,7 +690,8 @@
                                             </div>
 
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted">Usa el código: <span class="text-success">FLY25OFF</span></small>
+                                                <small class="text-muted">Usa el código: <span
+                                                        class="text-success">FLY25OFF</span></small>
                                                 <a href="tel: <?php echo $phone_number ?>" class="text-decoration-none">
                                                     <button class="btn btn-sm btn-outline-success compact-book-btn">
                                                         <i class="fas fa-phone-alt"></i> Llama Ahora
@@ -534,13 +708,15 @@
                                         <div class="card-body p-3">
                                             <div class="d-flex justify-content-between align-items-start mb-2">
                                                 <div>
-                                                    <span class="badge bg-teal bg-opacity-10 text-white small">FAMILIAR</span>
+                                                    <span
+                                                        class="badge bg-teal bg-opacity-10 text-white small">FAMILIAR</span>
                                                     <h6 class="mb-0 mt-1">Boston → Orlando</h6>
                                                 </div>
                                                 <span class="flight-price">$189</span>
                                             </div>
 
-                                            <div class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
+                                            <div
+                                                class="flight-route-compact d-flex justify-content-between align-items-center mb-2">
                                                 <div class="text-center">
                                                     <div class="airport-code">BOS</div>
                                                     <small class="city-name">Boston</small>
@@ -556,7 +732,8 @@
                                             </div>
 
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-muted">Usa el código: <span class="text-warning">FLY25OFF</span></small>
+                                                <small class="text-muted">Usa el código: <span
+                                                        class="text-warning">FLY25OFF</span></small>
                                                 <a href="tel: <?php echo $phone_number ?>" class="text-decoration-none">
                                                     <button class="btn btn-sm btn-outline-warning compact-book-btn">
                                                         <i class="fas fa-phone-alt"></i> Llama Ahora
@@ -582,7 +759,8 @@
                     <!-- Columna Izquierda - Contenido -->
                     <div class="col-md-4 text-center">
                         <div class="bg-white p-2 rounded-circle d-inline-block shadow-sm">
-                            <img src="assets/img/call.png" alt="Experto en viajes" class="img-fluid rounded-circle" width="150" height="150">
+                            <img src="assets/img/call.png" alt="Experto en viajes" class="img-fluid rounded-circle"
+                                width="150" height="150">
                         </div>
                         <p class="mt-3 mb-0 fw-semibold">Sarah Johnson</p>
                         <small class="text-muted">Consultora de Viajes Senior</small>
@@ -591,9 +769,11 @@
                     <!-- Columna Derecha -->
                     <div class="col-md-8 text-center text-md-start">
                         <h2 class="fw-bold mb-3">¿Necesita ayuda experta? Estamos disponibles 24/7</h2>
-                        <p class="lead text-muted mb-4">Nuestros expertos en viajes están listos para ayudarte a encontrar las mejores ofertas y planear tu viaje perfecto.</p>
+                        <p class="lead text-muted mb-4">Nuestros expertos en viajes están listos para ayudarte a
+                            encontrar las mejores ofertas y planear tu viaje perfecto.</p>
 
-                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-3">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-3">
                             <span class="badge bg-success bg-opacity-10 text-success py-2 px-3">
                                 <i class="fas fa-check-circle me-1"></i> Soporte disponible 24x7
                             </span>
@@ -614,7 +794,8 @@
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body d-flex flex-column justify-content-center">
                             <h3 class="fw-bold mb-3">Servicios Adicionales Exclusivos</h3>
-                            <p class="text-muted mb-0">Mejora tu viaje con equipaje extra, selección de asientos y check-in en línea para una experiencia sin complicaciones.</p>
+                            <p class="text-muted mb-0">Mejora tu viaje con equipaje extra, selección de asientos y
+                                check-in en línea para una experiencia sin complicaciones.</p>
                         </div>
                     </div>
                 </div>
@@ -640,7 +821,8 @@
                         </div>
                         <div class="col-4 col-md-4">
                             <div class="card h-100 shadow-sm border-0">
-                                <img src="assets/img/check-in.png" class="card-img-top rounded-2" alt="Check-In en Línea">
+                                <img src="assets/img/check-in.png" class="card-img-top rounded-2"
+                                    alt="Check-In en Línea">
                                 <div class="card-body p-2">
                                     <p class="mb-0 fw-semibold text-center">Check-In en Línea</p>
                                 </div>
@@ -654,7 +836,7 @@
     </div>
     <script>
         // Initialize carousel
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             new bootstrap.Carousel(document.querySelector('#compactFlightSlider'), {
                 interval: 3000,
                 ride: 'carousel',
@@ -675,7 +857,7 @@
     <!-- Owl Carousel JS -->
     <script src="assets/js/owl.carousel.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $(".review-carousel").owlCarousel({
                 items: 3,
                 margin: 15,
@@ -700,11 +882,11 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             var maxHeight = 0;
 
             // Sab cards ke andar max height find karo
-            $('.review-text').each(function() {
+            $('.review-text').each(function () {
                 var thisHeight = $(this).outerHeight();
                 if (thisHeight > maxHeight) {
                     maxHeight = thisHeight;
