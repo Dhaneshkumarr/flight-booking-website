@@ -1,0 +1,727 @@
+/* font style use localy */
+@import url(fonts.css);
+
+:root {
+  --bs-primary: #1982C4;
+  --bs-success: #8AC926;
+  --bs-danger: #219EBC;
+  --bs-warning: #FFCA3A;
+  --bs-purple: #FB8500;
+}
+
+::selection {
+  background-color: #0A2472;
+  color: #fff;
+}
+
+header {
+  z-index: 999;
+}
+
+
+/* navbar css */
+
+.navbar {
+  background-color: #F8F9FA !important;
+  border: none;
+}
+
+.navbar .nav-link.active {
+  color: #000 !important;
+}
+
+.airline-top-bar {
+  background: #3A0CA3;
+  font-size: 0.85rem;
+}
+
+.flag-icon {
+  height: 16px;
+  width: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.current-offer {
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #FFD700;
+}
+
+.route-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  background: rgba(13, 110, 253, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: #0d6efd !important;
+}
+
+.nav-hover-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 75%;
+  height: 1px;
+  background: #000;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .nav-hover-indicator {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-link.active .nav-hover-indicator {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.supportBtn {
+  background-color: #14213D !important;
+  color: white;
+  border: none;
+}
+
+.supportBtn:hover {
+  background-color: #1E2A50 !important;
+}
+
+.text-white-80 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-toggler {
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin: 5px;
+  background: #333;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler[aria-expanded="true"] span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(40, 167, 69, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+.hover-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+
+
+/* flight route carousel section */
+.compact-flight-card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.compact-flight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flight-route-compact {
+  position: relative;
+  padding: 8px 0;
+}
+
+.flight-line-compact {
+  width: 60px;
+  height: 2px;
+  background: #ddd;
+  position: relative;
+}
+
+.flight-line-compact:before {
+  content: "✈";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #666;
+}
+
+.flight-price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.airport-code {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.city-name {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.compact-book-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 8px;
+}
+
+/* Soft background colors */
+.bg-soft-blue {
+  background-color: #f0f8ff;
+}
+
+.bg-soft-green {
+  background-color: #f0fff4;
+}
+
+.bg-soft-orange {
+  background-color: #fff8f0;
+}
+
+.bg-soft-purple {
+  background-color: #f8f0ff;
+}
+
+.bg-soft-pink {
+  background-color: #fff0f8;
+}
+
+.bg-soft-teal {
+  background-color: #f0ffff;
+}
+
+/* Custom colors */
+.bg-purple {
+  background-color: #6f42c1;
+}
+
+.bg-pink {
+  background-color: #d63384;
+}
+
+.bg-teal {
+  background-color: #20c997;
+}
+
+.text-purple {
+  color: #6f42c1;
+}
+
+.text-pink {
+  color: #d63384;
+}
+
+.text-teal {
+  color: #20c997;
+}
+
+.btn-outline-purple {
+  color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.btn-outline-pink {
+  color: #d63384;
+  border-color: #d63384;
+}
+
+.btn-outline-teal {
+  color: #20c997;
+  border-color: #20c997;
+}
+
+
+/* search form css */
+/* @import url(search-form.css); */
+.home_banner form {
+  background-color: #F8F9FA !important;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(13, 71, 161, 0.25);
+  padding: 1.5rem 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Input fields styling */
+.home_banner form input,
+.home_banner form select,
+.home_banner form button {
+  border-radius: 0.5rem;
+  border: 1px solid #003366;
+  padding: 0.75rem 1.9rem;
+  font-size: 1rem;
+  color: #212121;
+}
+
+/* Input focus style */
+.home_banner form input:focus,
+.home_banner form select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  background: white;
+  outline: none;
+}
+
+/* Button style */
+.home_banner form button {
+  background-color: #3A0CA3;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home_banner form button:hover {
+  background-color: #0A356F;
+}
+
+.autocomplete-list {
+  position: absolute;
+  z-index: 1000;
+  width: 400px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 2px;
+  max-width: 100%;
+
+}
+
+.autocomple-option button {
+  min-width: 50px !important;
+  padding: 5px !important;
+  background-color: var(--falcon-secondary);
+  color: #fff;
+}
+
+.autocomple-option div {
+  font-size: var(--falcon-body-font-size) !important;
+}
+
+.autocomple-option:hover {
+  background-color: var(--falcon-light);
+}
+
+.frm_llbs {
+  position: absolute;
+  top: 14px;
+  left: 9px;
+  margin: 0;
+}
+
+.fm_ln1 .form-group {
+  margin: 0 0px 15px 0;
+  position: relative;
+}
+
+input.ipt1 {
+  text-transform: capitalize;
+  border-radius: 4px;
+  padding: 5px 10px 5px 32px;
+  background: #f4f9fc !important;
+}
+
+.searchIcons {
+  color: #3A0CA3 !important;
+}
+
+/* .fisrt_edus {
+  border-radius: 25px 0 0 25px !important;
+} */
+
+.autocomple-option button {
+  max-width: max-content !important;
+  padding: 5px !important;
+  margin: 0px;
+  background: var(--falcon-secondary);
+}
+
+.res_hh {
+  color: #000;
+  margin-bottom: .5rem;
+}
+
+/* why choose us seciton */
+.d-flex.align-items-start:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 6px;
+}
+
+.card-overlay-bottom .card-img-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  padding: 1rem;
+  color: white;
+}
+
+.card-img {
+  object-fit: cover;
+  height: 200px;
+}
+
+.locationImg {
+  width: 100%;
+  height: auto;
+}
+
+.pass_bx {
+  text-align: center;
+}
+
+
+.form-control::placeholder {
+  color: var(--falcon-dark) !important;
+}
+
+.readtrue {
+  cursor: pointer !important;
+  background-color: #fff !important;
+  opacity: 1;
+}
+
+.form-control[disabled] {
+  opacity: 0.4 !important;
+}
+
+.psg_dls {
+  position: absolute;
+  background: #fff;
+  padding: 10px;
+  top: 65px;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+
+.psg_dls .btn,
+.btn_done {
+  color: #fff;
+  padding: 5px;
+  line-height: 1;
+  background-color: #3A0CA3;
+}
+
+.btn_done {
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.psg_dls .form-control {
+  padding: 5px;
+  height: 26px;
+  line-height: 1;
+  border-radius: 5px !important;
+}
+
+.psg_dls .input-group {
+  gap: 5px;
+}
+
+.customradio:has(input[type="radio"]:checked) {
+  background-color: #3A0CA3 !important;
+  border-color: var(--falcon-primary);
+  color: #fff !important;
+}
+
+.searchBtn {
+  background-color: #3A0CA3 !important;
+  border-color: #3A0CA3;
+}
+
+.position-relative.p-4.p-md-5.rounded {
+  background: #e1700d;
+  max-width: 1140px;
+}
+
+
+/* expedia banner */
+.expedia_banner {
+  background: url('../img/contact-us.png') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+}
+.expedia_banner form {
+  background-color: #F8F9FA !important;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(13, 71, 161, 0.25);
+  padding: 1.5rem 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Input fields styling */
+.expedia_banner form input,
+.expedia_banner form select,
+.expedia_banner form button {
+  border-radius: 0.5rem;
+  border: 1px solid #003366;
+  padding: 0.75rem 1.9rem;
+  font-size: 1rem;
+  color: #212121;
+}
+
+/* Input focus style */
+.expedia_banner form input:focus,
+.expedia_banner form select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  background: white;
+  outline: none;
+}
+
+/* Button style */
+.expedia_banner form button {
+  background-color: #3A0CA3;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.expedia_banner form button:hover {
+  background-color: #0A356F;
+}
+
+.inner-banner {
+  background: url(../img/contact-us1.jpg);
+  padding: 4rem 0;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.inner-banner .bn_heading {
+  padding-bottom: 0px !important;
+  font-size: 30px;
+}
+
+.inner-banner .text-center {
+  text-align: left !important;
+}
+
+.breadcrumb {
+  justify-content: start !important;
+}
+
+.bn_heading {
+  font-size: 16px;
+}
+
+p.fs-6 {
+  font-size: 54px !important;
+  font-weight: 800;
+}
+
+.searchForm {
+  bottom: -3rem;
+}
+
+/* footer css  */
+
+.footer-links {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-links i {
+  transition: transform 0.3s ease;
+}
+
+.footer-links:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.footer-links:hover i {
+  transform: translateX(2px);
+}
+
+.custom-placeholder::placeholder {
+  color: #ccc !important;
+  opacity: 1;
+}
+
+/* search result  css */
+.airline-logo {
+  height: 50px;
+  width: 100px;
+  object-fit: contain;
+  background-color: var(--falcon-light);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* breadcrumb css  */
+.breadcrumb-tem+.breadcrumb-item::before {
+  color: #ffffff !important;
+}
+
+/* innner page css for form */
+.inner-banner .bg-white.p-3.rounded-4 {
+  margin-top: 1rem;
+}
+
+/* css for toast  */
+.toast {
+  z-index: 10;
+  animation: slideIn 0.5s ease-out;
+  width: max-content;
+  max-width: 290px;
+}
+
+/* Toast animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* loader css  */
+.loader-box {
+  z-index: 9999;
+}
+
+.loader-card {
+  max-width: 600px;
+  width: 100%;
+}
+
+.progress-bar-custom {
+  animation: loading 2s ease-in-out infinite;
+}
+
+.progress-plane {
+  animation: movePlane 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 70%;
+  }
+
+  75% {
+    width: 85%;
+  }
+
+  90% {
+    width: 90%;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes movePlane {
+  0% {
+    left: 0%;
+  }
+
+  50% {
+    left: 70%;
+  }
+
+  75% {
+    left: 85%;
+  }
+
+  90% {
+    left: 90%;
+  }
+
+  100% {
+    left: 90%;
+  }
+}
+
+/* popup styles */
+
+.expedia-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .expedia-popup-overlay {
+    display: none !important;
+  }
+}
+
+.agent-image {
+  width: 60px;
+  height: 60px;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success);
+  --bs-btn-hover-bg: #7ab521;
+  --bs-btn-hover-border-color: #7ab521;
+}
